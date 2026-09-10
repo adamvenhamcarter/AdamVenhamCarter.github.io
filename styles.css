@@ -159,3 +159,30 @@ footer { padding:34px 0 50px; border-top:1px solid var(--line); color:var(--mute
   .course-row { grid-template-columns:1fr; gap:8px; }
   .academics-callout { align-items:flex-start; flex-direction:column; }
 }
+
+/* CMAR motor case study */
+.cmar-hero { padding-bottom: 36px; }
+.project-hero-media { margin: 38px 0 0; border:1px solid var(--line); border-radius:18px; overflow:hidden; background:#eef1f6; box-shadow:var(--shadow); }
+.project-hero-media img { width:100%; height:auto; }
+.project-hero-media figcaption, .project-figure figcaption { padding:13px 16px; color:var(--muted); font-size:13px; background:rgba(11,18,32,.98); border-top:1px solid var(--line); }
+.project-case-section { padding-top:36px; }
+.requirement-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:24px 0 34px; }
+.requirement-card { border:1px solid var(--line); border-radius:12px; padding:18px; background:rgba(255,255,255,.022); }
+.requirement-card > span { color:var(--accent); font:800 11px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.08em; }
+.requirement-card h3 { margin:5px 0 6px; font-size:17px; }
+.requirement-card p { margin:0; font-size:13px; }
+.project-figure { margin:24px 0; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:rgba(255,255,255,.02); }
+.project-figure img { width:100%; height:auto; }
+.image-on-light img, .drawing-figure img { background:#f3f5f8; }
+.figure-grid { display:grid; gap:16px; margin:22px 0; }
+.figure-grid.two-up { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.figure-grid .project-figure { margin:0; }
+.photo-grid .project-figure img { aspect-ratio:4/3; object-fit:cover; }
+.final-prototype img { max-height:700px; object-fit:cover; object-position:center; }
+.status-panel { margin:28px 0 12px; padding:18px 20px; border:1px solid rgba(111,177,200,.28); background:rgba(111,177,200,.07); border-radius:12px; }
+.status-panel > div { display:flex; align-items:center; gap:9px; }
+.status-panel p { margin:5px 0 0 19px; font-size:13px; }
+.status-dot { width:10px; height:10px; border-radius:50%; background:var(--accent-2); box-shadow:0 0 0 4px rgba(111,177,200,.10); }
+.art-cmar { background:linear-gradient(rgba(11,18,32,.30),rgba(11,18,32,.74)),url('assets/cmar/exploded-cad.jpg') center/cover no-repeat; }
+.art-cmar::before { background-image:none; }
+@media (max-width:850px){.requirement-grid,.figure-grid.two-up{grid-template-columns:1fr}.project-hero-media{margin-top:28px}}
