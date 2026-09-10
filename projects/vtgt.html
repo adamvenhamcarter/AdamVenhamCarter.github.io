@@ -32,10 +32,10 @@
     </figure>
 
     <div class="race-result-strip" aria-label="Race result highlights">
-      <div class="race-result primary-result"><span>Race Result</span><strong>1st Place</strong><small>in class</small></div>
-      <div class="race-result"><span>Laps Completed</span><strong>141</strong><small>vs. 84 previous year</small></div>
-      <div class="race-result"><span>Time On Track</span><strong>6 hr</strong><small>2× previous year</small></div>
-      <div class="race-result"><span>Fastest Lap</span><strong>1:29.0</strong><small>VIR</small></div>
+      <div class="race-result primary-result"><span>Race Result: </span><strong> 1st Place</strong><small> in class</small></div>
+      <div class="race-result"><span>Laps Completed:</span><strong> 141</strong><small> vs. 84 previous year</small></div>
+      <div class="race-result"><span>Time On Track:</span><strong> 6 hr</strong><small> 2× previous year</small></div>
+      <div class="race-result"><span>Fastest Lap </span><strong>1:29.0</strong><small> at VIR</small></div>
     </div>
   </div>
 </section>
@@ -61,20 +61,7 @@
         <h3 class="subhead">Selecting the calibration strategy</h3>
         <p>For an endurance car, an aggressive tune that produces more peak power but reduces durability is a poor trade. I used a weighted concept selection process that placed <strong>50% of the decision weight on reliability</strong>, followed by power and high-RPM performance. The resulting choice was a mild ignition-advance and intake-valve-duration strategy rather than the most aggressive calibration.</p>
 
-        <div class="tuning-decision-grid">
-          <div class="decision-summary">
-            <div class="decision-score selected"><span>Selected</span><strong>3.55</strong><small>Mild ignition advance &amp; intake valve duration</small></div>
-            <div class="decision-score"><span>Aggressive</span><strong>2.80</strong><small>High advance &amp; long intake duration</small></div>
-            <div class="decision-score"><span>Baseline</span><strong>3.24</strong><small>Stock ignition &amp; valve timing</small></div>
-          </div>
-          <div class="weight-list">
-            <div><span>Reliability</span><strong>50%</strong></div>
-            <div><span>Power</span><strong>25%</strong></div>
-            <div><span>High-RPM performance</span><strong>19%</strong></div>
-            <div><span>Low-RPM performance</span><strong>5%</strong></div>
-            <div><span>Fuel consumption</span><strong>1%</strong></div>
-          </div>
-        </div>
+
 
         <h3 class="subhead">Mass-air-flow calibration</h3>
         <p>The MAF transfer function was recalibrated to reflect the engine's increased airflow after intake, exhaust, and scavenging changes. This ensured that sensor voltage continued to map to an appropriate estimated mass flow so the ECU could meter fuel correctly as volumetric efficiency changed.</p>
