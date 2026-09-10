@@ -83,12 +83,25 @@
 
       <section id="cfd" class="case-block">
         <div class="section-kicker">03 · Computational Fluid Dynamics</div>
-        <h2>Understanding flow-driven ice removal</h2>
-        <p>ANSYS Fluent was used to investigate flow through the helical tube and quantify the wall-shear field available to remove growing ice. The model used approximately 1.92 million elements and showed that curvature creates a strongly nonuniform shear environment around the tube.</p>
-        <p>In the modeled coil, wall shear was approximately <strong>0.125 Pa on the outside of the bend</strong> and <strong>0.05 Pa on the inside</strong>. That difference provides a plausible mechanism for preferential ice accumulation in low-shear regions and motivates both geometry optimization and additional detachment methods.</p>
+        <h2>From preliminary CFD to deformed-cross-section analysis</h2>
+        <p>ANSYS Fluent was first used to investigate flow through the helical tube and quantify the wall-shear field available to remove growing ice. The preliminary model used approximately 1.92 million elements and showed that coil curvature creates a strongly nonuniform shear environment around the tube.</p>
+        <p>In the preliminary helical-coil model, wall shear was approximately <strong>0.125 Pa on the outside of the bend</strong> and <strong>0.05 Pa on the inside</strong>. That difference suggested a plausible mechanism for preferential ice accumulation in lower-shear regions and motivated follow-on geometry studies.</p>
 
-        <figure class="project-figure light-plot freeze-cfd-main"><img src="../assets/freeze/cfd-shear-detail.png" alt="ANSYS Fluent wall shear stress contours for the helical tube showing higher shear on the outer bend than the inner bend"><figcaption><strong>Wall-shear distribution.</strong> The helical geometry produces significantly different shear conditions across the tube circumference, an important constraint when relying on fluid forces for ice removal.</figcaption></figure>
-        <figure class="project-figure light-plot freeze-cfd-support"><img src="../assets/freeze/cfd-wall-shear.png" alt="Full coil ANSYS wall shear contour map"><figcaption>Full-coil wall-shear contour used to visualize how the local interfacial stress evolves through the curved flow path.</figcaption></figure>
+        <figure class="project-figure light-plot freeze-cfd-main"><img src="../assets/freeze/cfd-shear-detail.png" alt="Preliminary ANSYS Fluent wall shear stress contours for the helical tube showing higher shear on the outer bend than the inner bend"><figcaption><strong>Preliminary CFD result.</strong> The baseline helical geometry produces significantly different shear conditions across the tube circumference, showing why fluid forces alone may not remove ice uniformly.</figcaption></figure>
+
+        <div class="experiment-learning freeze-cfd-callout">
+          <span>Follow-on analysis</span>
+          <h3>What happens when the coil cross section deforms?</h3>
+          <p>After the preliminary CFD, I performed a follow-on wall-shear analysis on the actual coil geometry to examine how a deformed or non-circular cross section changes the local shear field. This matters because manufacturing, handling, or loading can distort the tube and change the interfacial stresses available for ice removal.</p>
+        </div>
+
+        <div class="figure-grid three-up freeze-cfd-grid">
+          <figure class="project-figure light-plot"><img src="../assets/freeze/cfd-deformed-case-a.png" alt="Wall shear contour on helical coil for one deformed cross-section case"><figcaption><strong>Deformed cross section — Case A.</strong> Representative follow-on CFD showing how cross-sectional deformation redistributes the wall-shear field around the coil.</figcaption></figure>
+          <figure class="project-figure light-plot"><img src="../assets/freeze/cfd-deformed-case-b.png" alt="Wall shear contour on helical coil for a second deformed cross-section case"><figcaption><strong>Deformed cross section — Case B.</strong> A second geometry study showing that both the magnitude and location of higher-shear regions can shift as the cross section departs from circular.</figcaption></figure>
+          <figure class="project-figure light-plot"><img src="../assets/freeze/cfd-deformed-case-c.png" alt="Wall shear contour on helical coil for a third deformed cross-section case"><figcaption><strong>Deformed cross section — Case C.</strong> The distorted coil still exhibits strong inner/outer asymmetry, but with a modified stress distribution that may influence localized ice buildup and release behavior.</figcaption></figure>
+        </div>
+
+        <p>Together, the preliminary and follow-on CFD results show that <strong>both global coil curvature and local cross-section deformation affect the wall-shear environment</strong>. That makes geometric fidelity important when interpreting experiments and when designing coils intended to shed ice continuously.</p>
       </section>
 
       <section id="detachment" class="case-block">

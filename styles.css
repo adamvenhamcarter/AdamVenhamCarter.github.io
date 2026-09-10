@@ -524,3 +524,17 @@ footer { padding:34px 0 50px; border-top:1px solid var(--line); color:var(--mute
   .daq-hero h1,.freeze-hero h1{font-size:clamp(38px,10vw,54px);}
   .code-record code{font-size:11px;}
 }
+
+
+.figure-grid.three-up { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.freeze-cfd-grid .project-figure { display:flex; flex-direction:column; height:100%; }
+.freeze-cfd-grid img { height:270px; object-fit:contain; background:#fff; padding:6px; }
+.freeze-cfd-grid figcaption { flex:1; }
+.freeze-cfd-callout { margin:24px 0 22px; }
+@media (max-width:1100px){
+  .figure-grid.three-up{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:850px){
+  .figure-grid.three-up{grid-template-columns:1fr;}
+  .freeze-cfd-grid img{height:auto;max-height:540px;}
+}
