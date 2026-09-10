@@ -132,6 +132,8 @@ footer { padding:34px 0 50px; border-top:1px solid var(--line); color:var(--mute
 .gpa strong { font-size:42px; line-height:1; letter-spacing:-.04em; color:var(--text); }
 .gpa span { color:var(--muted); font-size:14px; }
 .academic-note { color:var(--muted); font-size:14px; margin-top:18px; }
+.transcript-actions { margin-top:20px; }
+.transcript-note { color:var(--muted); font-size:12px; margin:9px 0 0; }
 .course-section { padding-top:72px; padding-bottom:72px; }
 .alt-section { background:rgba(255,255,255,.014); border-top:1px solid rgba(255,255,255,.04); border-bottom:1px solid rgba(255,255,255,.04); }
 .course-list { display:grid; gap:0; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:rgba(255,255,255,.018); }
