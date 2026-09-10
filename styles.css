@@ -186,3 +186,78 @@ footer { padding:34px 0 50px; border-top:1px solid var(--line); color:var(--mute
 .art-cmar { background:linear-gradient(rgba(11,18,32,.30),rgba(11,18,32,.74)),url('assets/cmar/exploded-cad.jpg') center/cover no-repeat; }
 .art-cmar::before { background-image:none; }
 @media (max-width:850px){.requirement-grid,.figure-grid.two-up{grid-template-columns:1fr}.project-hero-media{margin-top:28px}}
+
+/* VTGT Mazda 3 endurance-racing case study */
+.vtgt-hero { padding-bottom:36px; }
+.vtgt-hero-media { background:#0d1320; }
+.vtgt-hero-media img { max-height:680px; object-fit:cover; object-position:center 52%; }
+.race-result-strip { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:14px; }
+.race-result { border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,.028); padding:16px 18px; min-height:112px; display:flex; flex-direction:column; justify-content:center; }
+.race-result span { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.12em; font-weight:800; }
+.race-result strong { font-size:28px; line-height:1.15; letter-spacing:-.03em; margin-top:5px; }
+.race-result small { color:var(--muted); font-size:12px; margin-top:3px; }
+.race-result.primary-result { border-color:rgba(229,141,78,.52); background:linear-gradient(135deg,rgba(229,141,78,.15),rgba(229,141,78,.035)); }
+.race-result.primary-result strong { color:#ffd1ad; }
+.vtgt-callout { margin-top:28px; }
+.case-jump { display:flex; gap:9px; flex-wrap:wrap; margin:30px 0 8px; padding-bottom:25px; border-bottom:1px solid var(--line); }
+.case-jump a { color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:7px 11px; font-size:12px; font-weight:700; }
+.case-jump a:hover { color:var(--text); border-color:rgba(229,141,78,.45); }
+.case-block { scroll-margin-top:92px; padding-top:3px; }
+.section-kicker { color:var(--accent-2); font:800 11px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; margin-top:42px; }
+.case-block .section-kicker + h2 { margin-top:7px; }
+.subhead { margin:30px 0 8px; font-size:20px; letter-spacing:-.01em; }
+.tuning-decision-grid { display:grid; grid-template-columns:1.18fr .82fr; gap:14px; margin:22px 0 32px; }
+.decision-summary, .weight-list { border:1px solid var(--line); border-radius:14px; overflow:hidden; background:rgba(255,255,255,.02); }
+.decision-score { display:grid; grid-template-columns:82px 64px minmax(0,1fr); gap:10px; align-items:center; padding:13px 16px; border-bottom:1px solid var(--line); }
+.decision-score:last-child { border-bottom:0; }
+.decision-score span { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+.decision-score strong { font-size:22px; }
+.decision-score small { color:var(--muted); line-height:1.35; }
+.decision-score.selected { box-shadow:inset 3px 0 0 var(--accent); background:rgba(229,141,78,.07); }
+.weight-list { padding:7px 16px; }
+.weight-list div { display:flex; justify-content:space-between; gap:18px; padding:10px 0; border-bottom:1px solid var(--line); color:var(--muted); font-size:13px; }
+.weight-list div:last-child { border-bottom:0; }
+.weight-list strong { color:var(--text); }
+.light-plot img { background:#fff; }
+.tuning-map-grid img { aspect-ratio:1.7/1; object-fit:contain; padding:4px; }
+.validation-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:22px 0; }
+.validation-card { border:1px solid var(--line); border-radius:12px; padding:17px 18px; background:rgba(111,177,200,.045); }
+.validation-card span { color:var(--accent-2); font-size:11px; text-transform:uppercase; letter-spacing:.1em; font-weight:800; }
+.validation-card strong { display:block; font-size:24px; margin:3px 0 4px; letter-spacing:-.03em; }
+.validation-card p { margin:0; font-size:12px; line-height:1.5; }
+.validation-plots img { aspect-ratio:1.72/1; object-fit:contain; padding:4px; }
+.vtgt-status { border-color:rgba(229,141,78,.3); background:rgba(229,141,78,.06); }
+.vtgt-status .status-dot { background:var(--accent); box-shadow:0 0 0 4px rgba(229,141,78,.10); }
+.whole-car-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:24px 0 8px; }
+.whole-car-card { border:1px solid var(--line); border-radius:12px; padding:18px; background:rgba(255,255,255,.021); }
+.whole-car-card span { color:var(--accent); font:800 10px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.11em; text-transform:uppercase; }
+.whole-car-card h3 { margin:5px 0 6px; font-size:18px; }
+.whole-car-card p { margin:0; font-size:13px; }
+.engine-rebuild-figure img { max-height:620px; object-fit:contain; background:#f4f4f4; }
+.race-day-grid img { aspect-ratio:4/3; object-fit:cover; }
+.lesson-strip { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 8px; }
+.lesson-strip span { border:1px solid rgba(229,141,78,.25); background:rgba(229,141,78,.055); border-radius:999px; color:#d9c2af; padding:7px 10px; font-size:12px; font-weight:700; }
+.race-stats-table { margin:22px 0 28px; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+.race-stat-row { display:grid; grid-template-columns:1.25fr .8fr .8fr; gap:12px; padding:13px 16px; border-bottom:1px solid var(--line); align-items:center; }
+.race-stat-row:last-child { border-bottom:0; }
+.race-stat-row.header { background:rgba(255,255,255,.035); color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+.race-stat-row:not(.header) span:last-child { color:#ffd1ad; font-weight:800; }
+.team-win-figure img { max-height:720px; object-fit:cover; object-position:center; }
+.result-callout { margin-top:26px; }
+.vtgt-aside .aside-highlight { margin-top:22px; padding:14px; border:1px solid rgba(229,141,78,.26); border-radius:10px; background:rgba(229,141,78,.06); }
+.aside-highlight span { display:block; color:var(--accent); font-size:10px; text-transform:uppercase; letter-spacing:.1em; font-weight:800; }
+.aside-highlight strong { display:block; margin-top:4px; font-size:15px; }
+.art-race { background:linear-gradient(rgba(11,18,32,.18),rgba(11,18,32,.78)),url('assets/vtgt/hero-track.jpg') center 50%/cover no-repeat; }
+.art-race::before { background-image:none; }
+
+@media (max-width:850px){
+  .race-result-strip{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .tuning-decision-grid,.validation-grid,.whole-car-grid{grid-template-columns:1fr;}
+  .decision-score{grid-template-columns:72px 56px minmax(0,1fr);}
+}
+@media (max-width:520px){
+  .race-result-strip{grid-template-columns:1fr 1fr;}
+  .race-result{padding:14px;min-height:100px;}
+  .race-result strong{font-size:24px;}
+  .race-stat-row{grid-template-columns:1.1fr .7fr .7fr;font-size:12px;gap:8px;padding:12px;}
+}
