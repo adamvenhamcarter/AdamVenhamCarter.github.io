@@ -118,3 +118,41 @@ footer { padding:34px 0 50px; border-top:1px solid var(--line); color:var(--mute
   .hero-grid,.project-layout{grid-template-columns:1fr}.hero-visual{min-height:320px}.project-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr 1fr}.project-aside{position:static;order:-1}.nav-links{display:none}.nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;padding:22px;background:#0b1220;border-bottom:1px solid var(--line)}.menu-btn{display:block}
 }
 @media (max-width: 520px){.container{width:min(calc(100% - 28px),var(--max))}.hero{padding-top:72px}.section{padding:64px 0}.skills-grid{grid-template-columns:1fr}.contact{padding:28px}.rotor{right:8px}.hero-stat{left:22px}}
+
+
+/* Academics */
+.nav-links a.active { color: var(--text); }
+.academics-hero { padding-bottom: 58px; }
+.degree-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:38px; max-width:920px; }
+.degree-card { border:1px solid var(--line); border-radius:16px; padding:26px; background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.018)); box-shadow:var(--shadow); }
+.degree-card h2 { font-size:26px; margin:7px 0 2px; letter-spacing:-.02em; }
+.degree-card p { color:var(--muted); margin:0 0 22px; }
+.degree-label { color:var(--accent-2); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.13em; }
+.gpa { display:flex; align-items:baseline; gap:8px; border-top:1px solid var(--line); padding-top:18px; }
+.gpa strong { font-size:42px; line-height:1; letter-spacing:-.04em; color:var(--text); }
+.gpa span { color:var(--muted); font-size:14px; }
+.academic-note { color:var(--muted); font-size:14px; margin-top:18px; }
+.course-section { padding-top:72px; padding-bottom:72px; }
+.alt-section { background:rgba(255,255,255,.014); border-top:1px solid rgba(255,255,255,.04); border-bottom:1px solid rgba(255,255,255,.04); }
+.course-list { display:grid; gap:0; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:rgba(255,255,255,.018); }
+.course-row { display:grid; grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr); gap:28px; align-items:center; padding:18px 22px; border-bottom:1px solid var(--line); }
+.course-row:last-child { border-bottom:0; }
+.course-row:hover { background:rgba(255,255,255,.025); }
+.course-row h3 { margin:4px 0 0; font-size:17px; letter-spacing:-.01em; }
+.course-row p { margin:0; color:var(--muted); font-size:14px; }
+.course-code { display:inline-block; color:var(--accent); font:800 11px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.08em; }
+.featured-courses .course-row { background:linear-gradient(90deg,rgba(229,141,78,.025),transparent 42%); }
+.graduate-courses .course-row { background:linear-gradient(90deg,rgba(111,177,200,.025),transparent 42%); }
+.status-badge { display:inline-block; margin-left:8px; color:#cfe6ee; border:1px solid rgba(111,177,200,.34); background:rgba(111,177,200,.09); border-radius:999px; padding:2px 7px; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+.course-row.in-progress { box-shadow:inset 3px 0 0 rgba(111,177,200,.75); }
+.course-source-note { margin-top:18px; color:var(--muted); font-size:12px; max-width:880px; }
+.academic-next { margin-top:8px; }
+.academics-callout { display:flex; align-items:center; justify-content:space-between; gap:24px; border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin:0 0 42px; background:linear-gradient(110deg,rgba(111,177,200,.07),rgba(229,141,78,.04)); }
+.academics-callout h3 { margin:4px 0 3px; font-size:20px; }
+.academics-callout p { margin:0; color:var(--muted); font-size:14px; }
+
+@media (max-width: 850px) {
+  .degree-grid { grid-template-columns:1fr; }
+  .course-row { grid-template-columns:1fr; gap:8px; }
+  .academics-callout { align-items:flex-start; flex-direction:column; }
+}
