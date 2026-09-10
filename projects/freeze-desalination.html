@@ -1,14 +1,178 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Freeze desalination research case study by Adam Venham-Carter."><title>Freeze Desalination Research | Adam Venham-Carter</title><link rel="stylesheet" href="../styles.css"></head><body>
-<header class="site-header"><nav class="nav container"><a class="brand" href="../index.html"><span class="brand-mark">AVC</span><span>Adam Venham-Carter</span></a><div class="nav-links"><a href="../index.html#projects">Projects</a><a href="../academics.html">Academics</a><a href="../index.html#contact">Contact</a></div></nav></header>
-<main><section class="project-hero"><div class="container"><div class="kicker">Thermal Systems · Research</div><h1>Freeze Desalination Research</h1><p class="hero-copy">Experimental investigation of freeze desalination, ice formation, heat transfer, and ice adhesion with an emphasis on translating physical behavior into a controllable engineering process.</p><div class="project-meta"><span class="tag">Heat Transfer</span><span class="tag">Experimental Design</span><span class="tag">ANSYS Fluent</span><span class="tag">MATLAB</span><span class="tag">Instrumentation</span></div></div></section>
-<section class="section"><div class="container project-layout"><article class="project-content">
-<h2>The engineering problem</h2><p>Freeze desalination separates fresh water by selectively freezing water while rejecting dissolved salt. My work examined the thermal and mechanical behavior involved in producing and removing ice from a cooled surface.</p>
-<div class="figure-placeholder"><strong>Add your strongest test-rig photo here.</strong><br>Recommended: a clean image of the aluminum helical-coil heat exchanger and experimental setup.</div>
-<h2>Experimental approach</h2><p>The research used an aluminum helical-coil heat exchanger with controlled sub-zero coolant conditions. Testing examined ice growth under water layers and the interaction between ice, surface treatment, flow, and temperature.</p><ul><li>Controlled cold-side temperature during freezing experiments.</li><li>Evaluated heat-transfer and fluid-flow effects on ice formation.</li><li>Used hydrophobic surface treatment and controlled surface preparation.</li><li>Processed experimental measurements for comparison across test conditions.</li></ul>
-<h2>Modeling and mechanics</h2><p>Alongside testing, I worked on analytical descriptions of the forces involved in ice removal and used dimensional reasoning to identify the variables governing mechanical response. CFD analysis was also used to understand flow behavior around the test geometry.</p>
-<div class="callout"><strong>Portfolio upgrade:</strong> place one governing equation or dimensionless relationship here, followed by two sentences explaining what design decision it informed.</div>
-<div class="figure-placeholder"><strong>Add a results figure.</strong><br>Use a MATLAB plot, Fluent contour, or ice-growth comparison with readable axes and a one-sentence takeaway.</div>
-<h2>What this demonstrates</h2><p>This project combines thermal-fluid analysis, experimental design, surface science, instrumentation, and mechanical reasoning. More importantly, it required translating observations from a physical experiment into quantitative engineering decisions.</p>
-<a class="back" href="../index.html#projects">← Back to projects</a></article>
-<aside class="project-aside"><h3>Project snapshot</h3><dl><dt>Type</dt><dd>Research / thesis work</dd><dt>Focus</dt><dd>Freeze desalination & ice adhesion</dd><dt>Tools</dt><dd>MATLAB, Fluent, experimental DAQ</dd><dt>Materials</dt><dd>6061 aluminum test hardware</dd><dt>Add next</dt><dd>Photos, plots, final quantitative results</dd></dl></aside>
-</div></section></main><footer><div class="container">© <span data-year></span> Adam Venham-Carter</div></footer><script src="../script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Graduate research case study on freeze desalination, hydrophobic aluminum heat exchangers, ice adhesion, CFD, and experimental validation by Adam Venham-Carter.">
+  <title>Freeze Desalination Research | Adam Venham-Carter</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="brand" href="../index.html"><span class="brand-mark">AVC</span><span>Adam Venham-Carter</span></a>
+    <button class="menu-btn" aria-label="Toggle navigation">Menu</button>
+    <div class="nav-links"><a href="../index.html#projects">Projects</a><a href="../academics.html">Academics</a><a href="../index.html#experience">Experience</a><a href="../index.html#skills">Skills</a><a href="../index.html#contact">Contact</a></div>
+  </nav>
+</header>
+
+<main>
+<section class="project-hero freeze-hero">
+  <div class="container">
+    <div class="kicker">Graduate Research Thesis · Thermal / Fluids / Surface Engineering</div>
+    <h1>Freeze Desalination &amp; Ice-Slurry Generation</h1>
+    <p class="hero-copy">Developing a hydrophobic aluminum heat-exchanger approach for continuous ice-slurry generation by combining heat transfer, surface engineering, flow-induced shear, mechanical ice detachment, and custom experimental instrumentation.</p>
+    <div class="project-meta">
+      <span class="tag">Heat Transfer</span><span class="tag">ANSYS Fluent</span><span class="tag">Ice Adhesion</span><span class="tag">Experimental Design</span><span class="tag">MATLAB / Python</span><span class="tag">Arduino DAQ</span>
+    </div>
+
+    <figure class="project-hero-media freeze-hero-media">
+      <img src="../assets/freeze/hero-apparatus.jpg" alt="Freeze desalination proof-of-concept apparatus with Julabo recirculating chiller, aluminum coil, separator column, tubing, and instrumentation">
+      <figcaption>Proof-of-concept freeze-desalination apparatus integrating a recirculating chiller, helical aluminum heat exchanger, ice/water separation column, flow loop, and experimental instrumentation.</figcaption>
+    </figure>
+
+    <div class="freeze-status-strip" aria-label="Research status summary">
+      <div class="freeze-status primary-status"><span>Research Status</span><strong>In Progress</strong><small>Graduate thesis development</small></div>
+      <div class="freeze-status"><span>Current Fluid</span><strong>Tap Water</strong><small>Proof-of-concept testing</small></div>
+      <div class="freeze-status"><span>Current Focus</span><strong>Ice Formation</strong><small>Detachment &amp; apparatus validation</small></div>
+      <div class="freeze-status"><span>Next Phase</span><strong>Saline Testing</strong><small>Salt rejection &amp; production metrics</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section project-case-section">
+  <div class="container project-layout">
+    <article class="project-content">
+      <nav class="case-jump" aria-label="Freeze desalination case study sections">
+        <a href="#problem">Problem</a><a href="#apparatus">Apparatus</a><a href="#cfd">CFD</a><a href="#detachment">Detachment Model</a><a href="#adhesion">Ice Adhesion</a><a href="#daq">DAQ</a><a href="#status">Current Status</a>
+      </nav>
+
+      <section id="problem" class="case-block">
+        <div class="section-kicker">01 · Research Motivation</div>
+        <h2>The engineering problem</h2>
+        <p>Freeze desalination separates water from dissolved salts by freezing relatively pure ice and separating it from the remaining brine. The challenge is not simply creating ice—it is generating and removing ice continuously without allowing the heat exchanger to become blocked.</p>
+        <p>Previous coil-based work demonstrated the promise of ice-slurry generation but also showed a difficult operating tradeoff: conditions aggressive enough to create ice can also promote adhesion and wall growth. Aluminum improves heat transfer compared with polymer tubing, but its high thermal effectiveness makes controlled ice release even more important.</p>
+
+        <div class="freeze-problem-flow">
+          <div><span>01</span><strong>Remove heat</strong><small>Drive rapid ice nucleation and growth.</small></div>
+          <div class="flow-arrow">→</div>
+          <div><span>02</span><strong>Prevent wall buildup</strong><small>Limit adhesion and local blockage.</small></div>
+          <div class="flow-arrow">→</div>
+          <div><span>03</span><strong>Harvest ice</strong><small>Detach and transport crystals as slurry.</small></div>
+        </div>
+
+        <div class="callout freeze-callout"><strong>Research direction:</strong> retain the thermal performance of an aluminum coil while using a vapor-deposited silane hydrophobic surface treatment and controlled mechanical/flow stresses to improve ice release.</div>
+      </section>
+
+      <section id="apparatus" class="case-block">
+        <div class="section-kicker">02 · Experimental System</div>
+        <h2>Building the proof-of-concept apparatus</h2>
+        <p>The experimental loop uses a helical aluminum heat exchanger coupled to a Julabo DD1000F recirculating chiller and a vertical separation column. The system is being instrumented to track the thermal state of the loop, flow rate, and heat transfer while directly observing ice formation and transport.</p>
+
+        <div class="figure-grid two-up freeze-photo-grid">
+          <figure class="project-figure"><img src="../assets/freeze/current-apparatus.jpg" alt="Current freeze desalination test setup with chiller, separator column, Arduino electronics, thermocouple wiring, pump, and laptop"><figcaption><strong>Current test system.</strong> The September proof-of-concept configuration includes the chiller, separator, circulation hardware, thermocouples, heat-flux instrumentation, Arduino DAQ, and live logging computer.</figcaption></figure>
+          <figure class="project-figure"><img src="../assets/freeze/ice-formation-closeup.jpg" alt="Close-up of cloudy ice-water mixture and aluminum tube entering the experimental separator column"><figcaption><strong>Ice formation observation.</strong> Current tap-water testing is used to characterize freezing behavior, slurry transport, and operating stability before saline-water experiments.</figcaption></figure>
+        </div>
+
+        <video class="freeze-video" controls preload="metadata" poster="../assets/freeze/hero-apparatus.jpg">
+          <source src="../assets/freeze/proof-of-concept.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+        <p class="media-note">Proof-of-concept apparatus demonstration. Video is included to show the physical scale and flow-loop architecture rather than to claim final desalination performance.</p>
+      </section>
+
+      <section id="cfd" class="case-block">
+        <div class="section-kicker">03 · Computational Fluid Dynamics</div>
+        <h2>Understanding flow-driven ice removal</h2>
+        <p>ANSYS Fluent was used to investigate flow through the helical tube and quantify the wall-shear field available to remove growing ice. The model used approximately 1.92 million elements and showed that curvature creates a strongly nonuniform shear environment around the tube.</p>
+        <p>In the modeled coil, wall shear was approximately <strong>0.125 Pa on the outside of the bend</strong> and <strong>0.05 Pa on the inside</strong>. That difference provides a plausible mechanism for preferential ice accumulation in low-shear regions and motivates both geometry optimization and additional detachment methods.</p>
+
+        <figure class="project-figure light-plot freeze-cfd-main"><img src="../assets/freeze/cfd-shear-detail.png" alt="ANSYS Fluent wall shear stress contours for the helical tube showing higher shear on the outer bend than the inner bend"><figcaption><strong>Wall-shear distribution.</strong> The helical geometry produces significantly different shear conditions across the tube circumference, an important constraint when relying on fluid forces for ice removal.</figcaption></figure>
+        <figure class="project-figure light-plot freeze-cfd-support"><img src="../assets/freeze/cfd-wall-shear.png" alt="Full coil ANSYS wall shear contour map"><figcaption>Full-coil wall-shear contour used to visualize how the local interfacial stress evolves through the curved flow path.</figcaption></figure>
+      </section>
+
+      <section id="detachment" class="case-block">
+        <div class="section-kicker">04 · Analytical Modeling</div>
+        <h2>From coil deformation to ice detachment</h2>
+        <p>Fluid shear alone may not be sufficient to remove ice reliably. I developed a scaling framework that treats the helical coil as a compliant spring and connects axial compression to local wall motion, deformation-driven shear, and tensile stress at the ice–aluminum interface.</p>
+
+        <div class="equation-grid">
+          <div class="equation-card"><span>Coil deformation</span><strong>δ ∼ F N R<sub>c</sub><sup>3</sup> / (G I<sub>p</sub>)</strong><p>Relates applied axial force to global coil displacement.</p></div>
+          <div class="equation-card"><span>Competing shear mechanisms</span><strong>Π = τ<sub>d</sub> / τ<sub>f</sub></strong><p>Compares deformation-driven shear with flow-driven wall shear.</p></div>
+          <div class="equation-card"><span>Mixed-mode detachment</span><strong>Λ = (τ<sub>d</sub> + τ<sub>f</sub> + σ<sub>d</sub>) / τ<sub>adh</sub></strong><p>Combines shear and tensile loading against the adhesion threshold.</p></div>
+          <div class="equation-card"><span>Harvested ice rate</span><strong>ṁ<sub>ice</sub> ∼ (hAΔT / L<sub>f</sub>) Φ<sub>f</sub> Φ<sub>det</sub></strong><p>Links heat removal, freezing opportunity, and detachment efficiency.</p></div>
+        </div>
+
+        <p>The model creates a path from first-principles mechanics to system performance: the heat exchanger must create ice, the fluid must remain in the coil long enough for freezing, and the combined deformation and fluid stresses must overcome adhesion strongly enough to transport the ice away.</p>
+      </section>
+
+      <section id="adhesion" class="case-block">
+        <div class="section-kicker">05 · Supporting Ice-Adhesion Study</div>
+        <h2>Experimental failure that redirected the test method</h2>
+        <p>A supporting study adapted ASTM D3433/D3762 wedge-test concepts to compare ice adhesion on aluminum surface treatments, including bare aluminum, hot-water-treated aluminum, silane-coated aluminum, and combined hot-water/silane treatment.</p>
+        <p>The initial test geometry did <strong>not</strong> isolate the ice–aluminum interface. Instead of debonding from the aluminum, specimens failed cohesively along a crystallization seam inside the ice layer. That made the result unusable for true interfacial fracture-energy measurement—but it identified a critical flaw in the experimental method.</p>
+
+        <div class="figure-grid two-up freeze-adhesion-grid">
+          <figure class="project-figure"><img src="../assets/freeze/adhesion-failure-samples.jpg" alt="Frozen wedge adhesion test specimens after cohesive failure through the ice layer"><figcaption>Test specimens after cohesive failure through the ice rather than at the aluminum interface.</figcaption></figure>
+          <figure class="project-figure"><img src="../assets/freeze/adhesion-failure-seam.jpg" alt="Close-up of crystallization seam in the ice wedge specimen"><figcaption>The internal freeze-front seam formed a preferred crack path, preventing measurement of the intended interface adhesion.</figcaption></figure>
+        </div>
+
+        <div class="experiment-learning">
+          <span>Method redesign</span>
+          <h3>Force the fracture to occur at the interface</h3>
+          <p>Future specimens will be redesigned to suppress internal crack planes—for example by forming ice against a single adherend, controlling the freeze front, or using a bending-style release test—so that the measured failure is governed by the ice–aluminum interface rather than by the ice itself.</p>
+        </div>
+      </section>
+
+      <section id="daq" class="case-block">
+        <div class="section-kicker">06 · Instrumentation</div>
+        <h2>Custom thermal and flow data acquisition</h2>
+        <p>The proof-of-concept system is supported by a custom Arduino/Python DAQ that logs multiple thermocouple channels, flow rate, heat-flux-sensor temperature, heat-flux voltage and calculated heat flux. The live logger validates incoming rows, records fault messages, writes CSV/TXT data, and displays rolling plots during experiments.</p>
+        <div class="daq-link-panel">
+          <div><span>Related project</span><h3>Thermal &amp; Flow Data Acquisition System</h3><p>The DAQ hardware, MAX31856 thermocouple interfaces, ADS1115 heat-flux measurement, flow sensing, live plotting, and fault-handling development are documented separately.</p></div>
+          <a class="btn secondary" href="daq-system.html">View DAQ case study →</a>
+        </div>
+      </section>
+
+      <section id="status" class="case-block">
+        <div class="section-kicker">07 · Current Research Status</div>
+        <h2>Tap-water proof of concept is underway</h2>
+        <p>The current experimental phase uses tap water to validate the physical system before introducing salinity as another controlled variable. These runs are being used to refine cooling conditions, observe nucleation and ice transport, identify blockage behavior, and verify that the instrumentation produces reliable synchronized data.</p>
+
+        <div class="research-roadmap">
+          <div class="roadmap-step complete"><span>Completed / Established</span><strong>Modeling &amp; experimental framework</strong><p>Baseline CFD, analytical detachment scaling, apparatus construction, DAQ development, and preliminary ice-adhesion method evaluation.</p></div>
+          <div class="roadmap-step current"><span>Current</span><strong>Tap-water proof-of-concept testing</strong><p>Validate apparatus operation, characterize ice formation/detachment, refine operating conditions, and troubleshoot the full measurement chain.</p></div>
+          <div class="roadmap-step"><span>Planned</span><strong>Saline-water desalination testing</strong><p>Introduce controlled salinity and quantify salt rejection, ice production, thermal performance, and coated-versus-baseline behavior.</p></div>
+          <div class="roadmap-step"><span>Longer Term</span><strong>Integrated design model</strong><p>Connect CFD, heat transfer, ice adhesion, and coil deformation to predictive operating/design guidance for continuous slurry generation.</p></div>
+        </div>
+
+        <figure class="project-figure freeze-current-figure"><img src="../assets/freeze/ice-slurry-closeup.jpg" alt="Current proof-of-concept freeze desalination experiment showing cloudy ice-water mixture in the separator"><figcaption><strong>Research in progress.</strong> Current tap-water runs are being used to establish repeatable apparatus behavior before the project moves into saline-water performance testing.</figcaption></figure>
+
+        <div class="status-panel freeze-final-status"><div><span class="status-dot"></span><strong>Current phase: proof-of-concept experiments in progress</strong></div><p>Salt rejection and final desalination-efficiency results are intentionally not reported yet; those measurements belong to the planned saline-water phase.</p></div>
+      </section>
+
+      <a class="back" href="../index.html#projects">← Back to projects</a>
+    </article>
+
+    <aside class="project-aside freeze-aside">
+      <h3>Research snapshot</h3>
+      <dl>
+        <dt>Project</dt><dd>Graduate research thesis</dd>
+        <dt>Research question</dt><dd>Can an aluminum coil be engineered for continuous ice-slurry generation without persistent wall blockage?</dd>
+        <dt>Surface strategy</dt><dd>Vapor-deposited silane hydrophobic coating</dd>
+        <dt>Thermal system</dt><dd>Julabo DD1000F recirculating chiller</dd>
+        <dt>Modeling</dt><dd>ANSYS Fluent + scaling analysis</dd>
+        <dt>Instrumentation</dt><dd>Thermocouples, flow, heat flux, Arduino/Python DAQ</dd>
+        <dt>Current phase</dt><dd>Tap-water proof of concept</dd>
+        <dt>Next phase</dt><dd>Saline-water testing</dd>
+      </dl>
+      <div class="aside-highlight freeze-aside-highlight"><span>Research principle</span><strong>Create ice fast enough to be useful—remove it fast enough to avoid blockage.</strong></div>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer><div class="container">© <span data-year></span> Adam Venham-Carter · Mechanical Engineering Portfolio</div></footer>
+<script src="../script.js"></script>
+</body>
+</html>
