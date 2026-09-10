@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">DAQ V3 system architecture</title>
+  <desc id="desc">Five T-type thermocouples through MAX31856 interfaces, a flow sensor, and a FluxTeq heat flux sensor through an ADS1115 feed an Arduino Uno. Serial data is validated and logged in Python, then post-processed in MATLAB.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#111b2d"/><stop offset="1" stop-color="#0b1220"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity=".25"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#6fb1c8"/></marker>
+    <style>
+      .box{fill:#17243a;stroke:#ffffff;stroke-opacity:.15;stroke-width:2;rx:18;filter:url(#shadow)}
+      .box2{fill:#121e31;stroke:#e58d4e;stroke-opacity:.55;stroke-width:2;rx:18;filter:url(#shadow)}
+      .t{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#eef4ff;font-weight:700;font-size:24px}
+      .s{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#a9b8cd;font-size:17px}
+      .k{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;fill:#6fb1c8;font-weight:700;font-size:15px;letter-spacing:1px}
+      .a{stroke:#6fb1c8;stroke-width:4;fill:none;marker-end:url(#arrow)}
+      .bus{stroke:#6fb1c8;stroke-width:4;fill:none}
+    </style>
+  </defs>
+  <rect width="1400" height="760" rx="28" fill="url(#bg)"/>
+  <text x="70" y="74" class="k">DAQ V3 · SENSOR → FIRMWARE → LOGGER → ANALYSIS</text>
+
+  <rect class="box" x="70" y="125" width="300" height="145"/>
+  <text x="100" y="170" class="t">5× T-Type TC</text>
+  <text x="100" y="207" class="s">MAX31856 interfaces</text>
+  <text x="100" y="235" class="s">SPI + cold-junction data</text>
+
+  <rect class="box" x="70" y="310" width="300" height="145"/>
+  <text x="100" y="355" class="t">Flow Sensor</text>
+  <text x="100" y="392" class="s">Pulse input on D2</text>
+  <text x="100" y="420" class="s">Calibrated L/min</text>
+
+  <rect class="box" x="70" y="495" width="300" height="145"/>
+  <text x="100" y="540" class="t">FluxTeq HFS</text>
+  <text x="100" y="577" class="s">ADS1115 differential ADC</text>
+  <text x="100" y="605" class="s">Voltage → heat flux</text>
+
+  <path class="bus" d="M370 198 H435 M370 383 H435 M370 568 H435 M435 198 V568"/>
+  <path class="a" d="M435 383 H505"/>
+
+  <rect class="box2" x="505" y="285" width="260" height="195"/>
+  <text x="542" y="335" class="k">EMBEDDED LAYER</text>
+  <text x="542" y="382" class="t">Arduino Uno R3</text>
+  <text x="542" y="420" class="s">1 Hz sampling</text>
+  <text x="542" y="448" class="s">fault + sanity checks</text>
+
+  <path class="a" d="M765 383 H835"/>
+  <rect class="box" x="835" y="285" width="235" height="195"/>
+  <text x="870" y="335" class="k">HOST LOGGER</text>
+  <text x="870" y="382" class="t">Python</text>
+  <text x="870" y="420" class="s">16-field validation</text>
+  <text x="870" y="448" class="s">CSV · TXT · fault log</text>
+
+  <path class="a" d="M1070 383 H1140"/>
+  <rect class="box" x="1140" y="285" width="190" height="195"/>
+  <text x="1173" y="335" class="k">POST-PROCESS</text>
+  <text x="1173" y="382" class="t">MATLAB</text>
+  <text x="1173" y="420" class="s">plots + ΔT</text>
+  <text x="1173" y="448" class="s">summary statistics</text>
+
+  <text x="515" y="555" class="s">115200 baud serial CSV</text>
+  <text x="836" y="555" class="s">rolling live plots</text>
+  <text x="1140" y="555" class="s">processed datasets</text>
+</svg>

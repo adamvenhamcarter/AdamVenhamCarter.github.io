@@ -1,14 +1,152 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Thermal & Flow DAQ | Adam Venham-Carter</title><link rel="stylesheet" href="../styles.css"></head><body>
-<header class="site-header"><nav class="nav container"><a class="brand" href="../index.html"><span class="brand-mark">AVC</span><span>Adam Venham-Carter</span></a><div class="nav-links"><a href="../index.html#projects">Projects</a><a href="../academics.html">Academics</a><a href="../index.html#contact">Contact</a></div></nav></header>
-<main><section class="project-hero"><div class="container"><div class="kicker">Instrumentation · DAQ · Controls</div><h1>Thermal & Flow Data Acquisition System</h1><p class="hero-copy">A modular Arduino data-acquisition platform built to record temperature, flow, and heat flux while supporting pump-control development.</p><div class="project-meta"><span class="tag">Arduino Uno</span><span class="tag">MAX31856</span><span class="tag">ADS1115</span><span class="tag">MATLAB</span><span class="tag">PWM</span></div></div></section>
-<section class="section"><div class="container project-layout"><article class="project-content">
-<h2>Objective</h2><p>Build a single acquisition system capable of collecting multiple thermal measurements at useful resolution while remaining easy to calibrate, debug, and expand for active flow control.</p>
-<div class="figure-placeholder"><strong>Add a system architecture diagram.</strong><br>Arduino Uno → 4× MAX31856 thermocouple interfaces → ADS1115 / heat-flux sensor → flow sensor → serial logger → MATLAB.</div>
-<h2>System architecture</h2><p>The system integrates four T-type thermocouple channels through MAX31856 converters, a FluxTeq heat-flux sensor measured through a 16-bit ADS1115 ADC, and a flow sensor. Serial output is formatted for post-processing and plotting.</p><ul><li>Four independent temperature channels with cold-junction measurements and fault detection.</li><li>Low-level heat-flux signal acquisition through a dedicated ADC.</li><li>Flow-rate acquisition and calibration correction.</li><li>MATLAB/Python workflows for reviewing recorded datasets.</li><li>Pump PWM control planned as part of closed-loop experimental operation.</li></ul>
-<h2>Debugging & validation</h2><p>A substantial part of the project involved isolating intermittent thermocouple faults, over/under-voltage errors, invalid cold-junction values, serial logging issues, and channel-specific behavior. Individual channels were tested independently before reintegration.</p>
-<div class="callout"><strong>Good portfolio evidence:</strong> include one clean wiring diagram, one screenshot/photo of the assembled hardware, and one plot that proves all channels operating simultaneously.</div>
-<div class="figure-placeholder"><strong>Add a representative data plot.</strong><br>Suggested plot: inlet/outlet/auxiliary temperatures + flow versus time, with heat flux on a separate figure.</div>
-<h2>Engineering takeaway</h2><p>The project demonstrates sensor integration, signal conditioning, calibration, embedded debugging, data handling, and the practical challenge of making multiple interfaces work reliably as one experimental system.</p>
-<a class="back" href="../index.html#projects">← Back to projects</a></article>
-<aside class="project-aside"><h3>Project snapshot</h3><dl><dt>Controller</dt><dd>Arduino Uno R3</dd><dt>Temperature</dt><dd>4× T-type thermocouples</dd><dt>ADC</dt><dd>ADS1115</dd><dt>Measured</dt><dd>Temperature, flow, heat flux</dd><dt>Software</dt><dd>Arduino, MATLAB, Python</dd></dl></aside>
-</div></section></main><footer><div class="container">© <span data-year></span> Adam Venham-Carter</div></footer><script src="../script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Engineering case study for Adam Venham-Carter's Arduino-based thermal, flow, and heat-flux data acquisition system used in freeze-desalination research.">
+  <title>Thermal & Flow DAQ | Adam Venham-Carter</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="brand" href="../index.html"><span class="brand-mark">AVC</span><span>Adam Venham-Carter</span></a>
+    <button class="menu-btn" aria-label="Toggle navigation">Menu</button>
+    <div class="nav-links"><a href="../index.html#projects">Projects</a><a href="../academics.html">Academics</a><a href="../index.html#experience">Experience</a><a href="../index.html#skills">Skills</a><a href="../index.html#contact">Contact</a></div>
+  </nav>
+</header>
+
+<main>
+<section class="project-hero daq-hero">
+  <div class="container">
+    <div class="kicker">Instrumentation · Embedded Systems · Experimental Research</div>
+    <h1>Thermal &amp; Flow Data Acquisition System</h1>
+    <p class="hero-copy">A modular Arduino-based DAQ developed for freeze-desalination experiments, integrating five T-type thermocouple channels, flow measurement, heat-flux sensing, fault detection, live Python logging, and MATLAB post-processing.</p>
+    <div class="project-meta"><span class="tag">Arduino Uno R3</span><span class="tag">5× MAX31856</span><span class="tag">ADS1115</span><span class="tag">FluxTeq NuFLUX-M</span><span class="tag">Python</span><span class="tag">MATLAB</span></div>
+
+    <figure class="project-hero-media daq-hero-media">
+      <img src="../assets/daq/hardware.jpg" alt="Arduino-based freeze desalination data acquisition hardware connected to thermocouples, flow hardware, heat flux electronics, and a laptop">
+      <figcaption><strong>DAQ V3 in the experimental loop.</strong> The current bench setup combines sensor interfaces, Arduino acquisition, serial logging, and live analysis alongside the freeze-desalination apparatus.</figcaption>
+    </figure>
+
+    <div class="daq-stat-strip" aria-label="DAQ summary">
+      <div class="daq-stat primary"><span>Temperature</span><strong>5 Channels</strong><small>T-type thermocouples</small></div>
+      <div class="daq-stat"><span>Sample Period</span><strong>1 s</strong><small>Current firmware build</small></div>
+      <div class="daq-stat"><span>Serial Record</span><strong>16 Fields</strong><small>Measurement + diagnostic data</small></div>
+      <div class="daq-stat"><span>Current Use</span><strong>Active</strong><small>Freeze-desalination testing</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section project-case-section daq-case-section">
+  <div class="container project-layout">
+    <article class="project-content">
+      <nav class="case-jump" aria-label="DAQ case study sections"><a href="#objective">Objective</a><a href="#architecture">Architecture</a><a href="#calibration">Calibration</a><a href="#reliability">Reliability</a><a href="#software">Software</a><a href="#status">Current Use</a></nav>
+
+      <section id="objective" class="case-block">
+        <div class="section-kicker">01 · Objective</div>
+        <h2>One measurement system for the entire experiment</h2>
+        <p>The freeze-desalination apparatus requires synchronized thermal, hydraulic, and heat-transfer measurements. I developed the DAQ so the experiment could be operated from one acquisition platform instead of relying on independent instruments with separate timestamps and data formats.</p>
+        <p>The design goal was not simply to read sensors. It had to remain easy to calibrate, expose hardware faults immediately, reject corrupted values, preserve raw data, and produce files that could move directly into analysis.</p>
+
+        <div class="requirement-grid daq-requirements">
+          <div class="requirement-card"><span>01</span><h3>Multi-channel temperature</h3><p>Read five T-type thermocouples while retaining MAX31856 cold-junction and diagnostic information.</p></div>
+          <div class="requirement-card"><span>02</span><h3>Low-level heat flux</h3><p>Resolve the FluxTeq sensor's microvolt-scale signal through differential ADS1115 acquisition and averaging.</p></div>
+          <div class="requirement-card"><span>03</span><h3>Calibrated flow</h3><p>Convert pulse frequency into corrected volumetric flow rate for the circulating water loop.</p></div>
+          <div class="requirement-card"><span>04</span><h3>Reliable logging</h3><p>Detect invalid data before it enters the experimental dataset and keep faults separate from measurements.</p></div>
+        </div>
+      </section>
+
+      <section id="architecture" class="case-block">
+        <div class="section-kicker">02 · System Architecture</div>
+        <h2>Sensor to analysis pipeline</h2>
+        <p>The current DAQ uses the Arduino Uno as the synchronization layer. Thermocouple converters share the SPI bus with independent chip-select lines, the flow sensor uses an interrupt input, and the heat-flux sensor is measured differentially through an ADS1115. The Arduino outputs one structured serial record each sample, which is validated and logged on the host computer before post-processing.</p>
+        <figure class="project-figure daq-architecture"><img src="../assets/daq/architecture.svg" alt="Block diagram of five thermocouples, flow and heat flux sensors feeding Arduino, Python logging and MATLAB analysis"><figcaption>DAQ V3 architecture: multiple sensor interfaces are synchronized at the Arduino, passed as structured serial data to the Python logger, and converted into engineering quantities and summary datasets in MATLAB.</figcaption></figure>
+
+        <div class="daq-hardware-grid">
+          <div class="daq-hardware-card"><span>Temperature</span><strong>5× MAX31856</strong><p>T-type thermocouple interfaces on the Uno SPI bus with independent chip-select lines.</p></div>
+          <div class="daq-hardware-card"><span>Heat Flux</span><strong>ADS1115</strong><p>Differential A0–A1 measurement of the FluxTeq sensor with high gain and 32-sample averaging.</p></div>
+          <div class="daq-hardware-card"><span>Flow</span><strong>Interrupt on D2</strong><p>Pulse counting over the one-second sample interval followed by the experimental calibration correction.</p></div>
+          <div class="daq-hardware-card"><span>Output</span><strong>115200 baud</strong><p>Structured CSV-style records carrying measurements, cold-junction values, sensor voltage, sensitivity and heat flux.</p></div>
+        </div>
+      </section>
+
+      <section id="calibration" class="case-block">
+        <div class="section-kicker">03 · Calibration &amp; Signal Processing</div>
+        <h2>Turning raw sensor output into usable engineering data</h2>
+        <p>Calibration is handled at the measurement source whenever practical. Each thermocouple channel has an independently stored temperature offset, the flow sensor uses a linear correction from the previous calibration, and the heat-flux calculation applies sensor zero offset and temperature-dependent sensitivity before converting voltage into heat flux.</p>
+
+        <div class="equation-grid daq-equation-grid">
+          <div class="equation-card"><span>Flow correction</span><strong>Q<sub>corr</sub> = 0.8528 Q<sub>raw</sub> + 0.1284</strong><p>Corrects the pulse-derived flow measurement to the calibrated L/min response.</p></div>
+          <div class="equation-card"><span>Heat-flux conversion</span><strong>q″ = (V<sub>µV</sub> − V<sub>0</sub>) / S(T)</strong><p>Uses the measured microvolt signal, zero offset, and temperature-dependent sensitivity.</p></div>
+          <div class="equation-card"><span>ADC averaging</span><strong>N = 32 samples / output</strong><p>Averages repeated differential ADC reads before the heat-flux calculation to reduce short-period noise.</p></div>
+          <div class="equation-card"><span>Thermocouples</span><strong>T<sub>cal</sub> = T<sub>MAX31856</sub> + ΔT<sub>channel</sub></strong><p>Applies a separate calibration offset to each thermocouple channel.</p></div>
+        </div>
+
+        <div class="callout daq-callout"><strong>Current heat-flux calibration:</strong> the firmware uses a nominal 1.24 µV/(W/m²) sensor calibration constant together with a stored zero offset and temperature compensation. The values remain editable as the experimental calibration is refined.</div>
+      </section>
+
+      <section id="reliability" class="case-block">
+        <div class="section-kicker">04 · Debugging &amp; Data Integrity</div>
+        <h2>Making bad data fail loudly</h2>
+        <p>The most important development work was making the system distinguish a real experimental change from a sensor or communication fault. MAX31856 faults such as open thermocouples, cold-junction limits, thermocouple range errors, and over/under-voltage conditions are decoded by the firmware and reported as diagnostic messages instead of being mixed into the measurement stream.</p>
+        <p>A second layer of sanity checks rejects corrupted readings before output. The Python logger then performs its own validation, requiring a fresh Arduino header, exactly 16 numeric fields, finite values, and plausible ranges for flow, thermocouple and cold-junction measurements.</p>
+
+        <div class="daq-defense-grid">
+          <div class="daq-defense"><span>Layer 1</span><h3>Hardware fault decode</h3><p>Read and identify MAX31856 fault registers before accepting a sample.</p></div>
+          <div class="daq-defense"><span>Layer 2</span><h3>Firmware sanity check</h3><p>Reject implausible thermocouple or cold-junction values instead of serializing them.</p></div>
+          <div class="daq-defense"><span>Layer 3</span><h3>Host validation</h3><p>Reject malformed, nonnumeric, nonfinite, or out-of-range rows in Python.</p></div>
+          <div class="daq-defense"><span>Layer 4</span><h3>Separate fault log</h3><p>Preserve startup, error, and fault messages with timestamps for later troubleshooting.</p></div>
+        </div>
+
+        <div class="code-record" aria-label="DAQ serial record fields"><span>Serial data record</span><code>Time · Flow · TC1–TC5 · CJ1–CJ5 · HFS V · HFS µV · HFS sensitivity · Heat Flux</code></div>
+      </section>
+
+      <section id="software" class="case-block">
+        <div class="section-kicker">05 · Logging &amp; Analysis Software</div>
+        <h2>Live feedback during the test, deeper analysis afterward</h2>
+        <p>The host-side Python logger writes synchronized CSV and text files while maintaining a separate fault log. A rolling live window plots the five temperature channels, flow rate and heat flux so abnormal behavior can be identified while the experiment is still running.</p>
+        <p>After the run, the MATLAB analysis workflow maps the channels to physical measurements, optionally trims a test interval, calculates summary statistics and temperature differences, plots thermal/flow/heat-flux histories, reviews cold-junction behavior, and exports processed datasets with named channels.</p>
+
+        <div class="software-pipeline">
+          <div><span>During test</span><strong>Python live logger</strong><p>Serial validation · rolling plots · CSV · TXT · timestamped fault log</p></div>
+          <div class="pipeline-arrow">→</div>
+          <div><span>After test</span><strong>MATLAB analyzer</strong><p>Channel mapping · ΔT calculations · summary statistics · processed export</p></div>
+        </div>
+      </section>
+
+      <section id="status" class="case-block">
+        <div class="section-kicker">06 · Current Use &amp; Next Development</div>
+        <h2>Integrated into active freeze-desalination experiments</h2>
+        <p>DAQ V3 is now part of the proof-of-concept freeze-desalination setup and is being used while the apparatus is refined with tap-water experiments. The current build focuses on dependable acquisition and diagnostics; active pump modulation remains a planned expansion rather than a feature of the present firmware.</p>
+        <div class="daq-related-panel"><div><span>Research application</span><h3>Freeze Desalination &amp; Ice-Slurry Generation</h3><p>See how the DAQ supports the thermal, flow, ice-formation and heat-transfer measurements in the graduate thesis project.</p></div><a class="btn secondary" href="freeze-desalination.html">View research case study →</a></div>
+
+        <div class="status-panel daq-final-status"><div><span class="status-dot"></span><strong>Current status: acquisition system operational and under continued experimental refinement</strong></div><p>Next development focuses on cleaner packaging, continued calibration validation, and eventual pump PWM integration for controlled flow experiments.</p></div>
+      </section>
+
+      <a class="back" href="../index.html#projects">← Back to projects</a>
+    </article>
+
+    <aside class="project-aside daq-aside">
+      <h3>Project snapshot</h3>
+      <dl>
+        <dt>Controller</dt><dd>Arduino Uno R3</dd>
+        <dt>Thermocouples</dt><dd>5× T-type / MAX31856</dd>
+        <dt>Heat flux ADC</dt><dd>ADS1115 differential</dd>
+        <dt>Heat flux sensor</dt><dd>FluxTeq NuFLUX-M</dd>
+        <dt>Flow input</dt><dd>Pulse-counted sensor on D2</dd>
+        <dt>Sample interval</dt><dd>1 second</dd>
+        <dt>Logging</dt><dd>Python · CSV · TXT · fault log</dd>
+        <dt>Post-processing</dt><dd>MATLAB</dd>
+        <dt>Application</dt><dd>Freeze-desalination research</dd>
+      </dl>
+      <div class="aside-highlight daq-aside-highlight"><span>Design priority</span><strong>Reliable experimental data is more valuable than silently accepting a bad sensor reading.</strong></div>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer><div class="container">© <span data-year></span> Adam Venham-Carter · Mechanical Engineering Portfolio</div></footer>
+<script src="../script.js"></script>
+</body>
+</html>
