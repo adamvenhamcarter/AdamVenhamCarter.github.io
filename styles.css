@@ -67,22 +67,23 @@ h1 { font-size: clamp(48px, 7vw, 84px); line-height: .98; letter-spacing: -.045e
 .section-head p { max-width: 520px; color: var(--muted); margin:0; }
 
 .project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
-.card { border:1px solid var(--line); border-radius:16px; overflow:hidden; background:rgba(255,255,255,.025); transition:transform .18s ease, border-color .18s ease; }
+.card { border:1px solid var(--line); border-radius:16px; overflow:hidden; background:rgba(255,255,255,.025); transition:transform .18s ease, border-color .18s ease; display:flex; flex-direction:column; min-width:0; }
 .card:hover { transform: translateY(-4px); border-color: rgba(229,141,78,.45); }
 .card-art { min-height:210px; position:relative; display:flex; align-items:flex-end; padding:24px; overflow:hidden; }
-.card-art::before { content:""; position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 24px 24px; }
+.card-art::before { content:""; position:absolute; inset:0; z-index:1; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 24px 24px; pointer-events:none; }
+.card-art-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
 .art-freeze { background: radial-gradient(circle at 70% 30%,rgba(111,177,200,.42),transparent 11rem),linear-gradient(135deg,#172a43,#10192a); }
 .art-daq { background: radial-gradient(circle at 28% 30%,rgba(229,141,78,.35),transparent 10rem),linear-gradient(135deg,#1d2536,#0f1f26); }
 .art-race { background: radial-gradient(circle at 72% 55%,rgba(229,141,78,.34),transparent 12rem),linear-gradient(135deg,#191f2b,#2a1820); }
 .art-brake { background: radial-gradient(circle at 72% 43%,rgba(111,177,200,.35),transparent 11rem),linear-gradient(135deg,#121b29,#1b2434); }
 .art-cad { background: radial-gradient(circle at 30% 30%,rgba(111,177,200,.28),transparent 10rem),linear-gradient(135deg,#161f31,#151a27); }
 .art-label { position:relative; z-index:2; font: 700 12px ui-monospace, SFMono-Regular, Menlo, monospace; color:#d8e4f4; border:1px solid rgba(255,255,255,.2); background:rgba(11,18,32,.65); padding:8px 10px; border-radius:6px; }
-.card-body { padding:24px; }
+.card-body { padding:24px; display:flex; flex-direction:column; flex:1; min-width:0; }
 .card-body h3 { margin:0 0 9px; font-size:25px; letter-spacing:-.02em; }
 .card-body p { color:var(--muted); margin:0 0 18px; }
 .tags { display:flex; flex-wrap:wrap; gap:7px; }
 .tag { padding:5px 8px; border-radius:999px; border:1px solid var(--line); color:#c6d3e5; font-size:12px; }
-.card-link { display:inline-block; margin-top:18px; color:var(--accent); font-weight:750; }
+.card-link { display:inline-block; margin-top:auto; padding-top:18px; color:var(--accent); font-weight:750; }
 
 .timeline { border-left:1px solid var(--line); margin-left:8px; }
 .timeline-item { padding:0 0 34px 28px; position:relative; }
@@ -263,8 +264,10 @@ footer { padding:34px 0 50px; border-top:1px solid var(--line); color:var(--mute
 }
 
 /* 2001 Mustang GT ChampCar case study */
-.art-mustang { background:linear-gradient(rgba(11,18,32,.12),rgba(11,18,32,.82)),url('assets/mustang/card-cover.jpg') center 57%/cover no-repeat; }
-.art-mustang::before { background-image:none; }
+.art-mustang { background:#0d1320; }
+.art-mustang .card-art-photo { object-position:center 52%; transform:scale(1.01); }
+.art-mustang::before { background:linear-gradient(180deg,rgba(11,18,32,.04) 28%,rgba(11,18,32,.82) 100%); }
+.mustang-card .art-label { max-width:100%; }
 .mustang-hero { padding-bottom:36px; }
 .mustang-hero-media { background:#0d1320; }
 .mustang-hero-media img { width:100%; max-height:760px; object-fit:cover; object-position:center 55%; }
@@ -341,4 +344,19 @@ footer { padding:34px 0 50px; border-top:1px solid var(--line); color:var(--mute
   .mustang-result-strip,.mustang-system-grid,.mustang-outcome-grid,.repair-sequence{grid-template-columns:1fr;}
   .mustang-build-row{grid-template-columns:1fr;gap:5px;}
   .mustang-build-row.header{display:none;}
+}
+
+
+/* Mustang case-study polish */
+.mustang-hero h1 { max-width:1080px; text-wrap:balance; }
+.mustang-hero .hero-copy { max-width:900px; }
+.mustang-result, .mustang-system-card, .test-event-card, .strategy-step { min-width:0; }
+.mustang-result strong, .strategy-step strong { overflow-wrap:break-word; }
+.mustang-build-photos .project-figure, .mustang-finish-grid .project-figure { display:flex; flex-direction:column; height:100%; }
+.mustang-build-photos .project-figure figcaption, .mustang-finish-grid .project-figure figcaption { flex:1; }
+.mustang-build-row p, .mustang-system-card p, .test-event-card p { overflow-wrap:anywhere; }
+.strategy-subhead { max-width:760px; line-height:1.25; }
+@media (max-width:850px){
+  .mustang-hero h1{font-size:clamp(38px,9vw,58px);}
+  .mustang-hero .hero-copy{font-size:17px;}
 }
